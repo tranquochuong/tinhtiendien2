@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tiền điện</title>
+</head>
+<body>
+    <table>
+        <table border="1" align="center" >
+                <tr>
+                     <td>
+                    <input type="number" id="a" placeholder="Nhập số điện">
+                </td>
+                <td>
+                        <button onclick="check()">Thành tiền</button>
+                </td>
+                <td>
+                    
+            <h3>Thành tiền:</h3>
+            <div id="result">Hiện kết quả</div>
+                </td>
+                </tr>         
+        </table>
+        <script>
+            function check(){
+                let a= document.getElementById("a").value;
+                if( a < 0)
+        {
+                alert("Xin mời nhập lại số điện!")
+        }
+                else if( a <= 50)
+        {   result = (a*1.678).toFixed(2);
+                    document.getElementById("result").innerHTML= "Tiền điện là " + result + " " + "VNĐ";
+        }
+                else if (a <= 100)
+        {
+                    result = (50*1.678 + (a-50)*1.734).toFixed(2);
+                    document.getElementById("result").innerHTML= "Tiền điện là " + result + " " + "VNĐ";
+        } 
+                else if(a <= 200)
+        {
+                    result =(50*1.678 + 50*1.734 (a-50 -50)*2.014).toFixed(2);
+                    document.getElementById("result").innerHTML= "Tiền điện là " +" " + result + " " + "VNĐ";
+        }
+                else if(a <= 300){
+                    result = (50*1.678 + 50*1.734 + 100*2.014 + ( a - 100 - 50 -50)* 2.536).toFixed(2);
+                    document.getElementById("result").innerHTML= "Tiền điện là " + result + " " + "VNĐ";
+        }   
+                else if (a <= 400){
+                    result = (50*1.678 + 50*1.734 + 100*2.014 + 100* 2.536 + (a - 100 - 100 - 50- 50)* 2.834).toFixed(2);
+                    document.getElementById("result").innerHTML= "Tiền điện là " + result + " " + "VNĐ";
+                    
+        }
+                else
+        {
+                result = (50*1.678 + 50*1.734 + 100*2.014 + 100* 2.536 + 100* 2.834 + (a- 100 -100 - 100 - 50 - 50)*2.927).toFixed(2);
+            document.getElementById("result").innerHTML= "Tiền điện là " + result + " " + "VNĐ";
+        }
+}
+        </script>
+    </table>
+</body>
+</html>
